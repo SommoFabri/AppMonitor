@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bean\RecordBean.cs" />
+    <Compile Include="Bean\RecordBO.cs" />
     <Compile Include="Bean\RigheBean.cs" />
     <Compile Include="Bean\SaleBean.cs" />
     <Compile Include="Bean\TotaliBean.cs" />
@@ -47,6 +48,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModelView\ClockViewModel.cs" />
+    <Compile Include="ModelView\SettaTotali.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Connessioni.cs" />
   </ItemGroup>

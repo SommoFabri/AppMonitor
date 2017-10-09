@@ -12,6 +12,8 @@ namespace PsMonitor
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new Settatotali();
+
         }
     }
 }

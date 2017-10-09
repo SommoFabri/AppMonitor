@@ -1,4 +1,4 @@
-﻿namespace PsMonitor.Bean
+﻿namespace PsMonitor
 {
     public class SalaBean
     {
