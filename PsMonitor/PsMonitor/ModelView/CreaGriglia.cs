@@ -21,7 +21,7 @@ namespace PsMonitor.ModelView
             totali = connessione.record.getJSONData();
         }
 
-        public void  creaGriglia (Grid gridLayout)
+        public void  creaGrigliaHead (Grid gridLayout)
         {
 
 
@@ -44,11 +44,18 @@ namespace PsMonitor.ModelView
                     Text = i,
                     HorizontalTextAlignment = TextAlignment.Center,
                     VerticalTextAlignment = TextAlignment.Center,
+                    TextColor = Color.White,
+                    FontAttributes = FontAttributes.Bold
                 };
                 gridLayout.Children.Add(label, column, row);
                 column++;
 
             }
+        }
+
+        public void creaGrigliaBody(Grid gridLayout)
+        {
+
         }
     }
 }

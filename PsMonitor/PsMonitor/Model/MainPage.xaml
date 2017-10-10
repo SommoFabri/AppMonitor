@@ -5,7 +5,7 @@
              x:Class="PsMonitor.MainPage"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              >
-    <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <StackLayout>
         <StackLayout Orientation="Horizontal" HeightRequest="50" >
             <Image Source="logostruttura.jpg"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Margin="0,20,40,0">
@@ -27,8 +27,48 @@
                 <Label TextColor="Red" FontSize="20" Text ="{Binding TotaleRossi}"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" HeightRequest="30" BackgroundColor="#b8470f">
-            <Grid x:Name="gridLayout" HorizontalOptions="FillAndExpand" ColumnSpacing="5" >
+        <StackLayout Orientation="Horizontal" HeightRequest="150"  BackgroundColor="#b8470f">
+            <Grid x:Name="gridLayoutHead" HorizontalOptions="FillAndExpand" ColumnSpacing="5" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand"  >
+            <Grid x:Name="gridLayoutBody" HorizontalOptions="FillAndExpand" ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="#92adcc" Grid.Column="0" Grid.Row="0">
+                    <Label Text="In Triage" TextColor="Black" FontSize="10" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image HorizontalOptions="Center" VerticalOptions="Center" Source="cerchio_b.png" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="0" TextColor="Black" Grid.Row="0" Grid.Column="0"/>
+                            <Image HorizontalOptions="Center" VerticalOptions="Center" Source="cerchio_v.png" Aspect="AspectFit" Grid.Row="0" Grid.Column="1"/>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="0" TextColor="Black" Grid.Row="0" Grid.Column="1"/>
+                            <Image HorizontalOptions="Center" VerticalOptions="Center" Source="cerchio_g.png" Aspect="AspectFit" Grid.Row="0" Grid.Column="2"/>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="0" TextColor="Black" Grid.Row="0" Grid.Column="2"/>
+                            <Image HorizontalOptions="Center" VerticalOptions="Center" Source="cerchio_r.png" Aspect="AspectFit" Grid.Row="0" Grid.Column="3"/>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="0" TextColor="Black" Grid.Row="0" Grid.Column="3"/>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
             </Grid>
         </StackLayout>
     </StackLayout>
