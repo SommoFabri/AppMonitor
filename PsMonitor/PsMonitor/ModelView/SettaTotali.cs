@@ -10,6 +10,8 @@ using PsMonitor;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Xamarin.Forms;
+using PsMonitor.Service;
 
 namespace PsMonitor
 {
@@ -20,15 +22,11 @@ namespace PsMonitor
         string totaleverdi = "0";
         string totalegialli = "0";
         string totalerossi = "0";
-        private string response;
-        public RecordBO record;
         public TotaliBean totali;
-        Grid grid = new Grid();
-        public Settatotali()
+        public Settatotali( )
         {
-            getData();
-            totali = record.getJSONData();
-            int i = 0;
+            Service.Connessione connessione = new Connessione();
+            totali = connessione.record.getJSONData();
             totalebianchi = totali.bianchi.ToString();
             totaleverdi = totali.verdi.ToString();
             totalegialli = totali.gialli.ToString();
@@ -69,34 +67,6 @@ namespace PsMonitor
             {
                 totalerossi = value;
             }
-        }
-        public void getData()
-        {
-
-            response = REST().Result;
-            System.Diagnostics.Debug.WriteLine(response);
-            JObject jObject = JObject.Parse(response);
-            JArray jArray = (JArray)jObject["data"];
-            var result = JsonConvert.DeserializeObject<List<RecordBean>>(jArray.ToString()) as List<RecordBean>;
-            System.Diagnostics.Debug.WriteLine("Response: " + result.Count);
-            record = new RecordBO(result);
-        }
-
-        public static async Task<string> REST()
-        {
-            string strResponse = "";
-            HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetAsync("http://192.168.8.12:3004/whmonitorps?dataingresso=2017-07-19&oraingresso=20:00").Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-                strResponse = await response.Content.ReadAsStringAsync();
-            }
-            else
-            {
-                strResponse = await response.Content.ReadAsStringAsync();
-            }
-            return strResponse;
         }
     }
 }

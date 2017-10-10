@@ -28,20 +28,7 @@
             </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal" HeightRequest="30" BackgroundColor="#b8470f">
-            <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Stato" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"/>
-                <Label x:Name="salaUno" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0"/>
-                <Label x:Name="salaDue" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2" Grid.Row="0"/>
-                <Label x:Name="salaTre" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Grid.Row="0"/>
+            <Grid x:Name="gridLayout" HorizontalOptions="FillAndExpand" ColumnSpacing="5" >
             </Grid>
         </StackLayout>
     </StackLayout>
