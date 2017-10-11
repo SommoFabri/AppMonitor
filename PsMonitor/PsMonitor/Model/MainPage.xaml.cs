@@ -16,6 +16,7 @@ namespace PsMonitor
             ModelView.CreaGriglia griglia= new CreaGriglia();
             griglia.creaGrigliaHead(gridLayoutHead);
             RefreshConnection();
+            Service.Connessione.DateNow();
         }
 
         public void RefreshConnection()

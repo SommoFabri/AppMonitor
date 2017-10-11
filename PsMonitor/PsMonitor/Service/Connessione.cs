@@ -33,6 +33,15 @@ namespace PsMonitor.Service
             record = new RecordBO(result);
         }
 
+        public static void DateNow()
+        {
+            var data = DateTime.Today;
+            var ora = DateTime.Now.Hour.ToString();
+            var day = DateTime.Now.Day.ToString();
+            var month = DateTime.Now.Month.ToString();
+
+        }
+
         public static async Task<string> REST()
         {
             string strResponse = "";
