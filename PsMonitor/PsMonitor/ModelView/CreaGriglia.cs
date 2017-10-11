@@ -105,7 +105,8 @@ namespace PsMonitor.ModelView
                       VerticalOptions = LayoutOptions.Center,
                     BackgroundColor = Color.Black
                     };
-                grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1,GridUnitType.Auto) });
+
+                grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 for (int y=0; y<4; y++)
                 {
                     grid_image.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1,GridUnitType.Star) });
@@ -115,8 +116,8 @@ namespace PsMonitor.ModelView
                 {
                     var image = new Image
                     {
-                        HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.Center,
+                        HorizontalOptions = LayoutOptions.CenterAndExpand,
+                        VerticalOptions = LayoutOptions.CenterAndExpand,
                         Source = "cerchio_r.png",
                         Aspect=Aspect.AspectFit
                     };
@@ -131,7 +132,6 @@ namespace PsMonitor.ModelView
                     grid_image.Children.Add(label_image, column_image, row_image);
                     column_image++;
                 }
-                row_image++;
                 column_image = 0;
                 row++;
                 gridLayout.Children.Add(grid_image, column, row);
