@@ -13,7 +13,7 @@ namespace PsMonitor
         {
             InitializeComponent();
 
-            MainPage = new PsMonitor.MainPage();
+            MainPage = new NavigationPage(new PsMonitor.MainPage());
         }
 
         protected override void OnStart()

@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:PsMonitor"
              x:Class="PsMonitor.MainPage"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             NavigationPage.HasNavigationBar="False"
              >
 
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

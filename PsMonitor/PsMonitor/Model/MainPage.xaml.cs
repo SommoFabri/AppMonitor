@@ -17,19 +17,20 @@ namespace PsMonitor
             griglia.creaGrigliaHead(gridLayoutHead);
             RefreshConnection();
             Service.Connessione.DateNow();
+          
         }
 
         public void RefreshConnection()
         {
-            ModelView.CreaGriglia griglia = new CreaGriglia();
-            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            Device.StartTimer(TimeSpan.FromMinutes(1), () =>
             {
-                Service.Connessione connessione = new Service.Connessione();
-                connessione.getData();
-                TotaliBean totali = connessione.record.getJSONData();
-                AggiornaGriglia.Aggiorna_Griglia(gridLayoutHead,totali);
+               /* Service.Connessione connessione = new Service.Connessione();
+                connessione.getData();*/
+                var vUpdatedPage = new MainPage();
+                Navigation.InsertPageBefore(vUpdatedPage, this);
+                Navigation.PopAsync();
+                return true;
             });
-
         }
     }
 }
