@@ -113,16 +113,38 @@ namespace PsMonitor.ModelView
 
                 for (int y = 0; y < 4; y++)
                 {
+                    string immagine="";
+                    string numero = "";
+                    switch (y)
+                    {
+                        case 0:
+                            immagine = "cerchio_b";
+                            numero = i.bianchi.ToString();
+                            break;
+                        case 1:
+                            immagine = "cerchio_v";
+                            numero = i.verdi.ToString();
+                            break;
+                        case 2:
+                            immagine = "cerchio_g";
+                            numero = i.gialli.ToString();
+                            break;
+                        case 3:
+                            immagine = "cerchio_r";
+                            numero = i.rossi.ToString();
+                            break;
+
+                    }
                     var image = new Image
                     {
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.Center,
-                        Source = "cerchio_r.png",
+                        Source = immagine,
                         Aspect=Aspect.AspectFill
                     };
                     var label_image = new Label
                     {
-                        Text = "0",
+                        Text = numero,
                         HorizontalTextAlignment = TextAlignment.Center,
                         VerticalTextAlignment = TextAlignment.Center,
                         TextColor = Color.Black,
