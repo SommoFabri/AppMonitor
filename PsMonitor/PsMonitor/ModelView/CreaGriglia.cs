@@ -84,20 +84,17 @@ namespace PsMonitor.ModelView
                 };
                 var stack_vertical = new StackLayout
                 {
-                    Orientation = StackOrientation.Horizontal,
-                    BackgroundColor = Color.Red,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    VerticalOptions = LayoutOptions.CenterAndExpand
+                    Orientation = StackOrientation.Vertical,
                     
                 };
-                var stack_horizontal = new StackLayout
+                var stack_Due = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    VerticalOptions = LayoutOptions.CenterAndExpand
+
                 };
-                
                 gridLayout.Children.Add(label, column, row);
+                gridLayout.Children.Add(stack_vertical, column, row);
+                stack_vertical.Children.Add(stack_Due);
 
               //creo griglia per cerchietti
               var grid_image = new Grid
@@ -118,7 +115,7 @@ namespace PsMonitor.ModelView
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.Center,
                         Source = "cerchio_r.png",
-                        Aspect = Aspect.AspectFit
+                        HeightRequest=50
                     };
                     var label_image = new Label
                     {
@@ -135,9 +132,8 @@ namespace PsMonitor.ModelView
                 column_image = 0;
                 row++;
                 gridLayout.Children.Add(grid_image, column, row);
-                stack_vertical.Children.Add(label);
-                stack_vertical.Children.Add(stack_horizontal);
-                stack_horizontal.Children.Add(grid_image);
+                stack_vertical.Children.Add(grid_image);
+                stack_Due.Children.Add(label);
             }
 
 
