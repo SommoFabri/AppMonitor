@@ -85,27 +85,30 @@ namespace PsMonitor.ModelView
                 var stack_vertical = new StackLayout
                 {
                     Orientation = StackOrientation.Vertical,
+                    BackgroundColor=Color.LightGray
                     
                 };
                 var stack_Due = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
+                    BackgroundColor=Color.LightCyan
 
                 };
                 gridLayout.Children.Add(label, column, row);
                 gridLayout.Children.Add(stack_vertical, column, row);
                 stack_vertical.Children.Add(stack_Due);
 
-              //creo griglia per cerchietti
-              var grid_image = new Grid
-                    {
-                        HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.Center
+                //creo griglia per cerchietti
+                var grid_image = new Grid
+                {
+                    HorizontalOptions = LayoutOptions.Center,
+                      VerticalOptions = LayoutOptions.Center,
+                    BackgroundColor = Color.Black
                     };
-                grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1,GridUnitType.Auto) });
                 for (int y=0; y<4; y++)
                 {
-                    grid_image.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                    grid_image.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1,GridUnitType.Star) });
                 }
 
                 for (int y = 0; y < 4; y++)
@@ -115,7 +118,7 @@ namespace PsMonitor.ModelView
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.Center,
                         Source = "cerchio_r.png",
-                        HeightRequest=50
+                        Aspect=Aspect.AspectFit
                     };
                     var label_image = new Label
                     {
