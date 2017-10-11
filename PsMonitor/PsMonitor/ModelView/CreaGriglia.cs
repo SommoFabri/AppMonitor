@@ -84,14 +84,14 @@ namespace PsMonitor.ModelView
                 };
                 var stack_vertical = new StackLayout
                 {
-                    Orientation = StackOrientation.Vertical,
-                    BackgroundColor=Color.LightGray
+                    Orientation = StackOrientation.Vertical
+                    
                     
                 };
                 var stack_Due = new StackLayout
                 {
-                    Orientation = StackOrientation.Horizontal,
-                    BackgroundColor=Color.LightCyan
+                    Orientation = StackOrientation.Horizontal
+                 
 
                 };
                 gridLayout.Children.Add(label, column, row);
@@ -102,8 +102,7 @@ namespace PsMonitor.ModelView
                 var grid_image = new Grid
                 {
                     HorizontalOptions = LayoutOptions.Center,
-                      VerticalOptions = LayoutOptions.Center,
-                    BackgroundColor = Color.Black
+                      VerticalOptions = LayoutOptions.Center
                     };
                 grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1,GridUnitType.Star) });
                 for (int y=0; y<4; y++)
