@@ -45,6 +45,8 @@
     <Compile Include="Bean\TotaliBean.cs" />
     <Compile Include="Bean\ValoreBean.cs" />
     <Compile Include="ModelView\CreaGriglia.cs" />
+    <Compile Include="ModelView\CreazioneGrigliaPazientiInSala.cs" />
+    <Compile Include="ModelView\CreazioneGrigliaStato.cs" />
     <Compile Include="Model\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
