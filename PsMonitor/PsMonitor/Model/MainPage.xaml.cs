@@ -21,11 +21,13 @@ namespace PsMonitor
 
         public void RefreshConnection()
         {
-            Device.StartTimer(TimeSpan.FromMinutes(1), () =>
+            ModelView.CreaGriglia griglia = new CreaGriglia();
+            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
             {
                 Service.Connessione connessione = new Service.Connessione();
                 connessione.getData();
-                return true;
+                TotaliBean totali = connessione.record.getJSONData();
+                AggiornaGriglia.Aggiorna_Griglia(gridLayoutHead,totali);
             });
 
         }
