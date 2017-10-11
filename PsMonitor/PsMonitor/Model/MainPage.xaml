@@ -28,13 +28,9 @@
                 <Label TextColor="Red" FontSize="20" Text ="{Binding TotaleRossi}"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" HeightRequest="150"  BackgroundColor="#b8470f">
+        <StackLayout HorizontalOptions="FillAndExpand">
             <Grid x:Name="gridLayoutHead" HorizontalOptions="FillAndExpand" ColumnSpacing="5" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal" >
-            <Grid x:Name="gridLayoutBody">
-              
-            </Grid>
-        </StackLayout>
+        <StackLayout VerticalOptions="End"></StackLayout>
     </StackLayout>
 </ContentPage>

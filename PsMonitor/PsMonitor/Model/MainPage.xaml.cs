@@ -15,7 +15,6 @@ namespace PsMonitor
             BindingContext = new Settatotali();
             ModelView.CreaGriglia griglia= new CreaGriglia();
             griglia.creaGrigliaHead(gridLayoutHead);
-            griglia.creaGrigliaBody(gridLayoutBody);
             RefreshConnection();
             Service.Connessione.DateNow();
         }

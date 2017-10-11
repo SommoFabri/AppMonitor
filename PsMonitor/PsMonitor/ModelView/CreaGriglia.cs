@@ -11,7 +11,7 @@ namespace PsMonitor.ModelView
 {
     class CreaGriglia
     {
-        
+
         public TotaliBean totali;
 
         public CreaGriglia()
@@ -21,104 +21,11 @@ namespace PsMonitor.ModelView
             totali = connessione.record.getJSONData();
         }
 
-        public void  creaGrigliaHead (Grid gridLayout)
+        public void creaGrigliaHead(Grid gridLayout)
         {
-
-
-            List <string> sala = new List<string>();
-            sala.Add("stato");
-            int row = 0;
-            int column = 0;
-
-            gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-
-            foreach (string i in totali.sale)
-            {
-             gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-             sala.Add(i);
-            }
-            foreach (string i in sala)
-            {
-                var label = new Label
-                {
-                    Text = i,
-                    HorizontalTextAlignment = TextAlignment.Center,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    TextColor = Color.White,
-                    FontAttributes = FontAttributes.Bold
-                };
-                gridLayout.Children.Add(label, column, row);
-                column++;
-
-            }
+            gridLayout = GrigliaBody.creaGrigliaBody(totali, gridLayout);
         }
 
-        public void creaGrigliaBody(Grid gridLayout)
-        {
-            int row = 0;
-            int column = 0;
 
-            foreach ( var i in totali.righe)
-            {
-                //righe;
-                gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }); //stato
-                //colonne;
-                gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                foreach (var y in i.valori)
-                {
-                    //gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }); //colonna per sala       }
-                }
-            }
-            foreach (var i in totali.righe)
-            {
-                //Color sfondo = Color("#92adcc"); 
-                var label = new Label
-                {
-                    Text = i.stato,
-                    HorizontalTextAlignment = TextAlignment.Center,
-                    VerticalTextAlignment = TextAlignment.Center,
-                    TextColor = Color.Black,
-                    FontAttributes = FontAttributes.Bold
-                };
-                var stack_vertical = new StackLayout
-                {
-                    Orientation = StackOrientation.Vertical,
-                    BackgroundColor=Color.LightGray
-                };
-                var stack_Due = new StackLayout
-                {
-                    Orientation = StackOrientation.Horizontal
-                };
-                gridLayout.Children.Add(label, column, row);
-                gridLayout.Children.Add(stack_vertical, column, row);
-                stack_vertical.Children.Add(stack_Due);
-                Grid grid_image = CreazioneGrigliaStato.griglia_cerchi(i);
-                gridLayout.Children.Add(grid_image, column, row);
-                stack_vertical.Children.Add(grid_image);
-                stack_Due.Children.Add(label);
-                foreach(var a in i.valori)
-                {
-                    column++;
-                    var stack_verticalUno = new StackLayout
-                    {
-                        Orientation = StackOrientation.Vertical,
-                        BackgroundColor = Color.LightGray
-                    };
-                    var stack_DueUno = new StackLayout
-                    {
-                        Orientation = StackOrientation.Horizontal
-                    };
-                    gridLayout.Children.Add(stack_verticalUno, column, row);
-                    stack_verticalUno.Children.Add(stack_DueUno);
-                    Grid grid_Pazienti = CreazioneGrigliaPazientiInSala.GrigliaPazienti(a);
-                    gridLayout.Children.Add(grid_Pazienti, column, row);
-                    stack_verticalUno.Children.Add(grid_Pazienti);
-                }
-                row++;
-                column = 0;
-            }
-        }
-
-       
     }
 }
