@@ -17,17 +17,20 @@ namespace PsMonitor
             griglia.creaGrigliaHead(gridLayoutHead);
             RefreshConnection();
             Service.Connessione.DateNow();
+          
         }
 
         public void RefreshConnection()
         {
             Device.StartTimer(TimeSpan.FromMinutes(1), () =>
             {
-                Service.Connessione connessione = new Service.Connessione();
-                connessione.getData();
+               /* Service.Connessione connessione = new Service.Connessione();
+                connessione.getData();*/
+                var vUpdatedPage = new MainPage();
+                Navigation.InsertPageBefore(vUpdatedPage, this);
+                Navigation.PopAsync();
                 return true;
             });
-
         }
     }
 }

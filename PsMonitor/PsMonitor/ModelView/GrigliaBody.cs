@@ -38,7 +38,9 @@ namespace PsMonitor.ModelView
                     VerticalTextAlignment = TextAlignment.Center,
                     TextColor = Color.White,
                     FontAttributes = FontAttributes.Bold,
-                    BackgroundColor=Color.Chocolate
+                    BackgroundColor=Color.Chocolate,
+                    
+                    
                     
                 };
                 gridLayout.Children.Add(label, column, row);
