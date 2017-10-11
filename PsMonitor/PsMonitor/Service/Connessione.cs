@@ -23,8 +23,8 @@ namespace PsMonitor.Service
         public RecordBO record;
         public void getData()
         {
-
-            response = REST().Result;
+            string URL = DateNow();
+            response = REST(URL).Result;
             System.Diagnostics.Debug.WriteLine(response);
             JObject jObject = JObject.Parse(response);
             JArray jArray = (JArray)jObject["data"];
@@ -33,20 +33,24 @@ namespace PsMonitor.Service
             record = new RecordBO(result);
         }
 
-        public static void DateNow()
+        public static string DateNow()
         {
             var data = DateTime.Today;
+            var data1 = data.AddDays(-1);
             var ora = DateTime.Now.Hour.ToString();
-            var day = DateTime.Now.Day.ToString();
-            var month = DateTime.Now.Month.ToString();
+            var day = data1.Day.ToString();
+            var month = data1.Month.ToString();
+            var anno = data1.Year.ToString();
+            string URL= "http://192.168.8.12:3004/whmonitorps?dataingresso=" + anno + "-" + month + "-" + day + "&oraingresso=20:00";
+            return URL;
 
         }
 
-        public static async Task<string> REST()
+        public static async Task<string> REST(string URL)
         {
             string strResponse = "";
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetAsync("http://192.168.8.12:3004/whmonitorps?dataingresso=2017-07-19&oraingresso=20:00").Result;
+            var response = httpClient.GetAsync(URL /*"http://192.168.8.12:3004/whmonitorps?dataingresso=2017-07-19&oraingresso=20:00"*/).Result;
 
             if (response.IsSuccessStatusCode)
             {
