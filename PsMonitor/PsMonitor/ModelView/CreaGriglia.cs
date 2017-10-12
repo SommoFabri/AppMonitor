@@ -12,16 +12,12 @@ namespace PsMonitor.ModelView
     class CreaGriglia
     {
 
-        public TotaliBean totali;
-
         public CreaGriglia()
         {
 
-            Service.Connessione connessione = new Connessione();
-            totali = connessione.record.getJSONData();
         }
 
-        public void creaGrigliaHead(Grid gridLayout)
+        public void creaGrigliaHead(Grid gridLayout, TotaliBean totali)
         {
             gridLayout = GrigliaBody.creaGrigliaBody(totali, gridLayout);
         }

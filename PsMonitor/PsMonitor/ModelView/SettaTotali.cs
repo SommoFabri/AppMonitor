@@ -22,11 +22,9 @@ namespace PsMonitor
         string totaleverdi = "0";
         string totalegialli = "0";
         string totalerossi = "0";
-        public TotaliBean totali;
-        public Settatotali( )
+
+        public Settatotali(TotaliBean totali)
         {
-            Service.Connessione connessione = new Connessione();
-            totali = connessione.record.getJSONData();
             totalebianchi = totali.bianchi.ToString();
             totaleverdi = totali.verdi.ToString();
             totalegialli = totali.gialli.ToString();
