@@ -33,19 +33,19 @@ namespace PsMonitor.ModelView
                 switch (y)
                 {
                     case 0:
-                        immagine = "cerchio_b";
+                        immagine = "cerchio_b.png";
                         numero = i.bianchi.ToString();
                         break;
                     case 1:
-                        immagine = "cerchio_v";
+                        immagine = "cerchio_v.png";
                         numero = i.verdi.ToString();
                         break;
                     case 2:
-                        immagine = "cerchio_g";
+                        immagine = "cerchio_g.png";
                         numero = i.gialli.ToString();
                         break;
                     case 3:
-                        immagine = "cerchio_r";
+                        immagine = "cerchio_r.png";
                         numero = i.rossi.ToString();
                         break;
 
@@ -63,6 +63,9 @@ namespace PsMonitor.ModelView
                     HorizontalTextAlignment = TextAlignment.Center,
                     VerticalTextAlignment = TextAlignment.Center,
                     TextColor = Color.Black,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize= 25
+
                 };
                 grid_image.Children.Add(image, column_image, row_image);
                 grid_image.Children.Add(label_image, column_image, row_image);

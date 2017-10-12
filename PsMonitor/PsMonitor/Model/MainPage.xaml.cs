@@ -15,9 +15,9 @@ namespace PsMonitor
         public TotaliBean totali;
         public MainPage()
         {
+            InitializeComponent();
             Service.Connessione connessione = new Connessione();
             totali = connessione.record.getJSONData();
-            InitializeComponent();
             BindingContext = new Settatotali(totali);
             ModelView.CreaGriglia griglia= new CreaGriglia();
             griglia.creaGrigliaHead(gridLayoutHead, totali);
@@ -27,12 +27,12 @@ namespace PsMonitor
 
         public void RefreshConnection()
         {
-            Device.StartTimer(TimeSpan.FromMinutes(1), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(20), () =>
             {
                 var vUpdatedPage = new MainPage();
                 Navigation.InsertPageBefore(vUpdatedPage, this);
                 Navigation.PopAsync();
-                return true;
+                return false;
             });
         }
     }

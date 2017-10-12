@@ -22,6 +22,7 @@ namespace PsMonitor
         string totaleverdi = "0";
         string totalegialli = "0";
         string totalerossi = "0";
+        string totale = "0";
 
         public Settatotali(TotaliBean totali)
         {
@@ -29,6 +30,8 @@ namespace PsMonitor
             totaleverdi = totali.verdi.ToString();
             totalegialli = totali.gialli.ToString();
             totalerossi = totali.rossi.ToString();
+            int i = totali.bianchi + totali.verdi + totali.gialli + totali.rossi;
+            totale = i.ToString();
 
         }
         public string TotaleBianchi
@@ -46,6 +49,14 @@ namespace PsMonitor
             set
             {
                 totaleverdi = value;
+            }
+        }
+        public string Totale
+        {
+            get { return totale; }
+            set
+            {
+                totale = value;
             }
         }
 

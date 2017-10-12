@@ -32,19 +32,19 @@ namespace PsMonitor.ModelView
                 switch (y)
                 {
                     case 0:
-                        immagine = "bianco";
+                        immagine = "bianco.png";
                         numero = i.bianchi.ToString();
                         break;
                     case 1:
-                        immagine = "verde";
+                        immagine = "verde.png";
                         numero = i.verdi.ToString();
                         break;
                     case 2:
-                        immagine = "giallo";
+                        immagine = "giallo.png";
                         numero = i.gialli.ToString();
                         break;
                     case 3:
-                        immagine = "rosso";
+                        immagine = "rosso.png";
                         numero = i.rossi.ToString();
                         break;
 

@@ -93,6 +93,19 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bianco.png" />
+    <Content Include="cerchio_b.png" />
+    <Content Include="cerchio_g.png" />
+    <Content Include="cerchio_r.png" />
+    <Content Include="cerchio_v.png" />
+    <Content Include="giallo.png" />
+    <Content Include="icon.png" />
+    <Content Include="logostruttura.jpg" />
+    <Content Include="logo_gesan.jpg" />
+    <Content Include="rosso.png" />
+    <Content Include="verde.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

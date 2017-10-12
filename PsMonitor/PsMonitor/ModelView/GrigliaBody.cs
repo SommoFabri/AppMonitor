@@ -29,6 +29,7 @@ namespace PsMonitor.ModelView
                 gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 sala.Add(i);
             }
+            sala.Add("Totali");
             foreach (string i in sala)
             {
                 var label = new Label
