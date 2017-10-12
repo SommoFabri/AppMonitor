@@ -21,7 +21,7 @@ namespace PsMonitor.Service
         }
         private string response;
         public RecordBO record;
-        public void getData()
+        public async void getData()
         {
             string URL = DateNow();
             response = REST(URL).Result;

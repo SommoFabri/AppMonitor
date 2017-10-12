@@ -24,8 +24,6 @@ namespace PsMonitor
         {
             Device.StartTimer(TimeSpan.FromMinutes(1), () =>
             {
-               /* Service.Connessione connessione = new Service.Connessione();
-                connessione.getData();*/
                 var vUpdatedPage = new MainPage();
                 Navigation.InsertPageBefore(vUpdatedPage, this);
                 Navigation.PopAsync();

@@ -8,6 +8,7 @@
              >
 
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ActivityIndicator x:Name="Aggiornamento" IsVisible="False"></ActivityIndicator>
         <StackLayout Orientation="Horizontal" HeightRequest="50" >
             <Image Source="logostruttura.jpg"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Margin="0,20,40,0">
