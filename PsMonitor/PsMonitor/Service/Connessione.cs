@@ -26,7 +26,7 @@ namespace PsMonitor.Service
 
             string URL = DateNow();
             response = await REST(URL);
-               // System.Diagnostics.Debug.WriteLine(response);
+            System.Diagnostics.Debug.WriteLine(response);
              if(response=="errore")
                 {
                 }
@@ -54,18 +54,26 @@ namespace PsMonitor.Service
         public static async Task<string> REST(string URL)
         {
             string strResponse = "";
-            HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetAsync(URL).Result;
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                strResponse = await response.Content.ReadAsStringAsync();
+               
+                HttpClient httpClient = new HttpClient();
+                var response = httpClient.GetAsync(URL).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    strResponse = await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    strResponse = "errore";
+                }
+                return strResponse;
             }
-            else
+            catch (Exception)
             {
-                strResponse = "errore";
+                return strResponse = "errore";
             }
-            return strResponse;
+            
         }
     }
 

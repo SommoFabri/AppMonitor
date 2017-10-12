@@ -4,8 +4,8 @@
              x:Class="PsMonitor.Model.PaginaManutenzione">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="logopineta.scale-600.jpg" HeightRequest="700" WidthRequest="700"></Image>
-            <Label Text="Tentativo di riavvio della connessione, si prega di attendere"></Label>
+            <Image Source="logopineta.scale-400.jpg" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="700" WidthRequest="700"></Image>
+            <Label Text="Tentativo di riavvio della connessione, si prega di attendere" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" ></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

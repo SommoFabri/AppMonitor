@@ -21,7 +21,7 @@ namespace PsMonitor.Model
         {
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
             {
-                var vUpdatedPage = new PaginaManutenzione();
+                var vUpdatedPage = new MainPage();
                 Navigation.InsertPageBefore(vUpdatedPage, this);
                 Navigation.PopAsync();
                 return false;
