@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PsMonitor.Model.PaginaManutenzione">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="logopineta.scale-600.jpg" HeightRequest="700" WidthRequest="700"></Image>
+            <Label Text="Tentativo di riavvio della connessione, si prega di attendere"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -102,9 +102,28 @@ namespace PsMonitor.ModelView
                     gridLayout.Children.Add(grid_Pazienti, column, row);
                     stack_verticalUno.Children.Add(grid_Pazienti);
                 }
+                column++;
+                var stack_verticalTotali = new StackLayout
+                {
+                    Orientation = StackOrientation.Vertical,
+                    BackgroundColor = Color.LightGray
+                };
+                var stack_DueTotali = new StackLayout
+                {
+                    Orientation = StackOrientation.Horizontal
+                };
+                gridLayout.Children.Add(stack_verticalTotali, column, row);
+                stack_verticalTotali.Children.Add(stack_DueTotali);
+                Grid grid_totali = CreazioneGrigliaCerchiTotali.griglia_cerchiTotali(i);
+                gridLayout.Children.Add(grid_totali, column, row);
+                stack_verticalTotali.Children.Add(grid_totali);
+             
+
                 row++;
                 column = 0;
+
             }
+
             return gridLayout;
         }
         

@@ -147,6 +147,7 @@
     <BundleResource Include="Resources\cerchio_r.png" />
     <BundleResource Include="Resources\cerchio_v.png" />
     <BundleResource Include="Resources\giallo.png" />
+    <BundleResource Include="Resources\cerchio_tot.png" />
     <Content Include="Resources\icon.png" />
     <BundleResource Include="Resources\logostruttura.jpg" />
     <BundleResource Include="Resources\logo_gesan.jpg" />

@@ -45,6 +45,7 @@
     <Compile Include="Bean\TotaliBean.cs" />
     <Compile Include="Bean\ValoreBean.cs" />
     <Compile Include="ModelView\CreaGriglia.cs" />
+    <Compile Include="ModelView\CreazioneGrigliaCerchiTotali.cs" />
     <Compile Include="ModelView\CreazioneGrigliaPazientiInSala.cs" />
     <Compile Include="ModelView\CreazioneGrigliaStato.cs" />
     <Compile Include="ModelView\GrigliaBody.cs" />
@@ -53,6 +54,9 @@
     </Compile>
     <Compile Include="ModelView\ClockViewModel.cs" />
     <Compile Include="ModelView\SettaTotali.cs" />
+    <Compile Include="Model\PaginaManutenzione.xaml.cs">
+      <DependentUpon>PaginaManutenzione.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Connessione.cs" />
     <Compile Include="Service\REST.cs" />
@@ -98,13 +102,21 @@
     <Content Include="cerchio_b.png" />
     <Content Include="cerchio_g.png" />
     <Content Include="cerchio_r.png" />
+    <Content Include="cerchio_tot.png" />
     <Content Include="cerchio_v.png" />
     <Content Include="giallo.png" />
     <Content Include="icon.png" />
+    <Content Include="logopineta.scale-400.jpg" />
     <Content Include="logostruttura.jpg" />
     <Content Include="logo_gesan.jpg" />
     <Content Include="rosso.png" />
     <Content Include="verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\PaginaManutenzione.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

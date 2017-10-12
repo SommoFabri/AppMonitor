@@ -112,6 +112,7 @@
     <Content Include="cerchio_b.png" />
     <Content Include="cerchio_g.png" />
     <Content Include="cerchio_r.png" />
+    <Content Include="cerchio_tot.png" />
     <Content Include="cerchio_v.png" />
     <Content Include="giallo.png" />
     <Content Include="icon.png" />

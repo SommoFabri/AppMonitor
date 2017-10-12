@@ -23,14 +23,19 @@ namespace PsMonitor.Service
         public RecordBO record;
         public async void getData()
         {
+
             string URL = DateNow();
-            response = REST(URL).Result;
-            System.Diagnostics.Debug.WriteLine(response);
-            JObject jObject = JObject.Parse(response);
+            response = await REST(URL);
+               // System.Diagnostics.Debug.WriteLine(response);
+             if(response=="errore")
+                {
+                }
+            else {
+                JObject jObject = JObject.Parse(response);
             JArray jArray = (JArray)jObject["data"];
             var result = JsonConvert.DeserializeObject<List<RecordBean>>(jArray.ToString()) as List<RecordBean>;
             System.Diagnostics.Debug.WriteLine("Response: " + result.Count);
-            record = new RecordBO(result);
+            record = new RecordBO(result);}
         }
 
         public static string DateNow()
@@ -58,7 +63,7 @@ namespace PsMonitor.Service
             }
             else
             {
-                strResponse = await response.Content.ReadAsStringAsync();
+                strResponse = "errore";
             }
             return strResponse;
         }
