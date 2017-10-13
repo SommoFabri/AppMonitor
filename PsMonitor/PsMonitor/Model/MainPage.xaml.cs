@@ -18,11 +18,12 @@ namespace PsMonitor
         public bool start=false;
         public TimeSpan tempo;
         public string deltatemporale, tempotrascorso;
+        Service.Connessione connessione = new Connessione();
         public MainPage()
         {
            
             InitializeComponent();
-            Service.Connessione connessione = new Connessione();
+            caricamento.IsVisible = false;
             try
             {
                 totali = connessione.record.getJSONData();
@@ -31,11 +32,10 @@ namespace PsMonitor
             }
             catch (Exception)
             {
-
-                Navigation.PushModalAsync(new PaginaManutenzione());
+                 
+                caricamento.IsRunning = true;
+                caricamento.IsVisible = true;
             }
-               
-         
             RefreshConnection();
         }
         public async void CreazioneGriglia()
@@ -47,13 +47,16 @@ namespace PsMonitor
         {
              Device.StartTimer(TimeSpan.FromSeconds(20), () =>
             {
-                var vUpdatedPage = new MainPage();
-                Navigation.InsertPageBefore(vUpdatedPage, this);
+                Navigation.InsertPageBefore(new MainPage(), this);
                 Navigation.PopAsync();
                 return false;
             });
      
            
         }
+     
+    
+
+
     }
 }

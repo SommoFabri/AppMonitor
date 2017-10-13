@@ -108,13 +108,13 @@
     <None Include="PsMonitor.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bianco.png" />
-    <Content Include="cerchio_b.png" />
-    <Content Include="cerchio_g.png" />
-    <Content Include="cerchio_r.png" />
-    <Content Include="cerchio_tot.png" />
-    <Content Include="cerchio_v.png" />
-    <Content Include="giallo.png" />
+    <Content Include="Bianco.png" />
+    <Content Include="cerchioB.png" />
+    <Content Include="cerchioG.png" />
+    <Content Include="cerchioR.png" />
+    <Content Include="cerchioTot.png" />
+    <Content Include="cerchioV.png" />
+    <Content Include="Giallo.png" />
     <Content Include="icon.png" />
     <Content Include="logopineta.scale-200.jpg" />
     <Content Include="logopineta.scale-400.jpg" />
@@ -157,8 +157,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="rosso.png" />
-    <Content Include="verde.png" />
+    <Content Include="Rosso.png" />
+    <Content Include="Verde.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

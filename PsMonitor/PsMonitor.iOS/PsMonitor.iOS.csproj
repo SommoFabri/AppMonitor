@@ -150,18 +150,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\bianco.png" />
-    <BundleResource Include="Resources\cerchio_b.png" />
-    <BundleResource Include="Resources\cerchio_g.png" />
-    <BundleResource Include="Resources\cerchio_r.png" />
-    <BundleResource Include="Resources\cerchio_v.png" />
-    <BundleResource Include="Resources\giallo.png" />
-    <BundleResource Include="Resources\cerchio_tot.png" />
+    <BundleResource Include="Resources\Bianco.png" />
+    <BundleResource Include="Resources\cerchioB.png" />
+    <BundleResource Include="Resources\cerchioG.png" />
+    <BundleResource Include="Resources\cerchioR.png" />
+    <BundleResource Include="Resources\cerchioTot.png" />
+    <BundleResource Include="Resources\cerchioV.png" />
+    <BundleResource Include="Resources\Giallo.png" />
     <Content Include="Resources\icon.png" />
     <BundleResource Include="Resources\logostruttura.jpg" />
-    <BundleResource Include="Resources\logo_gesan.jpg" />
-    <BundleResource Include="Resources\rosso.png" />
-    <BundleResource Include="Resources\verde.png" />
+    <BundleResource Include="Resources\Rosso.png" />
+    <BundleResource Include="Resources\Verde.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

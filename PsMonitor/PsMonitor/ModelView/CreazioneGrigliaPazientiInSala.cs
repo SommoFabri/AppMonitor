@@ -32,19 +32,19 @@ namespace PsMonitor.ModelView
                 switch (y)
                 {
                     case 0:
-                        immagine = "bianco.png";
+                        immagine = "Bianco.png";
                         numero = i.bianchi.ToString();
                         break;
                     case 1:
-                        immagine = "verde.png";
+                        immagine = "Verde.png";
                         numero = i.verdi.ToString();
                         break;
                     case 2:
-                        immagine = "giallo.png";
+                        immagine = "Giallo.png";
                         numero = i.gialli.ToString();
                         break;
                     case 3:
-                        immagine = "rosso.png";
+                        immagine = "Rosso.png";
                         numero = i.rossi.ToString();
                         break;
 
@@ -62,7 +62,7 @@ namespace PsMonitor.ModelView
                     HorizontalTextAlignment = TextAlignment.Center,
                     VerticalTextAlignment = TextAlignment.Center,
                     TextColor = Color.Black,
-                    FontSize=15,
+                    FontSize =25 ,
                     FontAttributes = FontAttributes.Bold
                 };
                 grid_Reparto.Children.Add(image, column_image, row_image);

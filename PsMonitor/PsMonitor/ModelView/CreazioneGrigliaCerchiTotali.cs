@@ -29,7 +29,7 @@ namespace PsMonitor.ModelView
             {
                 string immagine = "";
                 string numero = "";
-                immagine = "cerchio_tot.png";
+                immagine = "cerchioTot.png";
                 int j = i.bianchi + i.rossi + i.verdi + i.gialli;
                 numero = j.ToString();
 

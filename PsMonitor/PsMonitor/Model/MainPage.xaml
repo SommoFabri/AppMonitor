@@ -31,6 +31,7 @@
             </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="FillAndExpand">
+            <ActivityIndicator x:Name="caricamento"></ActivityIndicator>
             <Grid x:Name="gridLayoutHead" HorizontalOptions="FillAndExpand" ColumnSpacing="5" />
         </StackLayout>
         <StackLayout VerticalOptions="End"></StackLayout>

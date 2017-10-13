@@ -1943,22 +1943,22 @@ namespace PsMonitor.Droid
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int bianco = 2130837579;
+			public const int Bianco = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int cerchio_b = 2130837580;
+			public const int cerchioB = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int cerchio_g = 2130837581;
+			public const int cerchioG = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int cerchio_r = 2130837582;
+			public const int cerchioR = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int cerchio_tot = 2130837583;
+			public const int cerchioTot = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int cerchio_v = 2130837584;
+			public const int cerchioV = 2130837584;
 			
 			// aapt resource value: 0x7f020051
 			public const int design_fab_background = 2130837585;
@@ -1967,7 +1967,7 @@ namespace PsMonitor.Droid
 			public const int design_snackbar_background = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int giallo = 2130837587;
+			public const int Giallo = 2130837587;
 			
 			// aapt resource value: 0x7f020054
 			public const int ic_audiotrack = 2130837588;
@@ -2177,67 +2177,64 @@ namespace PsMonitor.Droid
 			public const int icon = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int logo_gesan = 2130837657;
+			public const int logopineta = 2130837657;
 			
 			// aapt resource value: 0x7f02009a
-			public const int logopineta = 2130837658;
+			public const int logostruttura = 2130837658;
 			
 			// aapt resource value: 0x7f02009b
-			public const int logostruttura = 2130837659;
+			public const int mr_dialog_material_background_dark = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int mr_dialog_material_background_dark = 2130837660;
+			public const int mr_dialog_material_background_light = 2130837660;
 			
 			// aapt resource value: 0x7f02009d
-			public const int mr_dialog_material_background_light = 2130837661;
+			public const int mr_ic_audiotrack_light = 2130837661;
 			
 			// aapt resource value: 0x7f02009e
-			public const int mr_ic_audiotrack_light = 2130837662;
+			public const int mr_ic_cast_dark = 2130837662;
 			
 			// aapt resource value: 0x7f02009f
-			public const int mr_ic_cast_dark = 2130837663;
+			public const int mr_ic_cast_light = 2130837663;
 			
 			// aapt resource value: 0x7f0200a0
-			public const int mr_ic_cast_light = 2130837664;
+			public const int mr_ic_close_dark = 2130837664;
 			
 			// aapt resource value: 0x7f0200a1
-			public const int mr_ic_close_dark = 2130837665;
+			public const int mr_ic_close_light = 2130837665;
 			
 			// aapt resource value: 0x7f0200a2
-			public const int mr_ic_close_light = 2130837666;
+			public const int mr_ic_media_route_connecting_mono_dark = 2130837666;
 			
 			// aapt resource value: 0x7f0200a3
-			public const int mr_ic_media_route_connecting_mono_dark = 2130837667;
+			public const int mr_ic_media_route_connecting_mono_light = 2130837667;
 			
 			// aapt resource value: 0x7f0200a4
-			public const int mr_ic_media_route_connecting_mono_light = 2130837668;
+			public const int mr_ic_media_route_mono_dark = 2130837668;
 			
 			// aapt resource value: 0x7f0200a5
-			public const int mr_ic_media_route_mono_dark = 2130837669;
+			public const int mr_ic_media_route_mono_light = 2130837669;
 			
 			// aapt resource value: 0x7f0200a6
-			public const int mr_ic_media_route_mono_light = 2130837670;
+			public const int mr_ic_pause_dark = 2130837670;
 			
 			// aapt resource value: 0x7f0200a7
-			public const int mr_ic_pause_dark = 2130837671;
+			public const int mr_ic_pause_light = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int mr_ic_pause_light = 2130837672;
+			public const int mr_ic_play_dark = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int mr_ic_play_dark = 2130837673;
-			
-			// aapt resource value: 0x7f0200aa
-			public const int mr_ic_play_light = 2130837674;
-			
-			// aapt resource value: 0x7f0200ad
-			public const int notification_template_icon_bg = 2130837677;
-			
-			// aapt resource value: 0x7f0200ab
-			public const int rosso = 2130837675;
+			public const int mr_ic_play_light = 2130837673;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int verde = 2130837676;
+			public const int notification_template_icon_bg = 2130837676;
+			
+			// aapt resource value: 0x7f0200aa
+			public const int Rosso = 2130837674;
+			
+			// aapt resource value: 0x7f0200ab
+			public const int Verde = 2130837675;
 			
 			static Drawable()
 			{

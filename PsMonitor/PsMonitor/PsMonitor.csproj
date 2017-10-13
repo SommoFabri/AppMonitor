@@ -105,19 +105,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bianco.png" />
-    <Content Include="cerchio_b.png" />
-    <Content Include="cerchio_g.png" />
-    <Content Include="cerchio_r.png" />
-    <Content Include="cerchio_tot.png" />
-    <Content Include="cerchio_v.png" />
-    <Content Include="giallo.png" />
-    <Content Include="icon.png" />
+    <Content Include="Bianco.png" />
+    <Content Include="cerchioB.png" />
+    <Content Include="cerchioG.png" />
+    <Content Include="cerchioR.png" />
+    <Content Include="cerchioTot.png" />
+    <Content Include="cerchioV.png" />
+    <Content Include="Giallo.png" />
     <Content Include="logopineta.scale-400.jpg" />
-    <Content Include="logostruttura.jpg" />
-    <Content Include="logo_gesan.jpg" />
-    <Content Include="rosso.png" />
-    <Content Include="verde.png" />
+    <AndroidResource Include="logostruttura.jpg" />
+    <Content Include="Rosso.png" />
+    <Content Include="Verde.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model\PaginaManutenzione.xaml">
