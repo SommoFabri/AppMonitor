@@ -20,10 +20,26 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  BackgroundColor="#13a0ec" Padding="5,5,5,5">
             <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Pazienti in Pronto Soccorso" FontSize="Large" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                <Label TextColor="White" FontSize="Large" Text="{Binding TotaleBianchi}" FontAttributes="Bold" />
-                <Label TextColor="Green" FontSize="Large" Text="{Binding TotaleVerdi}" FontAttributes="Bold" />
-                <Label TextColor="Yellow" FontSize="Large" Text="{Binding TotaleGialli}"  FontAttributes="Bold"/>
-                <Label TextColor="Red" FontSize="Large" Text ="{Binding TotaleRossi}" FontAttributes="Bold" />
+                <Grid HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="cerchioB.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" />
+                    <Label   FontSize="Large" Text="{Binding TotaleBianchi}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" />
+                    <Image Source="cerchioV.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                    <Label  FontSize="Large" Text="{Binding TotaleVerdi}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" />
+                    <Image Source="cerchioG.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2" Grid.Row="0" />
+                    <Label  FontSize="Large" Text="{Binding TotaleGialli}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>
+                    <Image Source="cerchioR.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Grid.Row="0"/>
+                    <Label  FontSize="Large" Text ="{Binding TotaleRossi}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Column="3" Grid.Row="0" />
+                </Grid>
+
             </StackLayout>
             <Label Text="Totali" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Large"></Label>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
