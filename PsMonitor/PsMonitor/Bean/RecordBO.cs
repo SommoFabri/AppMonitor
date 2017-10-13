@@ -11,8 +11,11 @@ namespace PsMonitor
         {
 
             private List<RecordBean> lista = new List<RecordBean>();
-            private string[] sale = { "MEDICO", "ORTOPEDICO", "CHIRURGICO" };
-            private string[] stati = { "Accettato", "In Visita", "In Attesa Referto", "In Osservazione OBI", "Attesa Ricovero" };
+        private List<string> sale = new List<string>();
+        int count = 0;
+        private List<string> stati = new List<string>();
+        //private string[] stati = { "Accettato", "In Visita", "In Attesa Referto", "In Osservazione OBI", "Attesa Ricovero" };
+            
 
             private List<SalaBean> listSale;
             private List<RigaBean> listStato;
@@ -31,20 +34,55 @@ namespace PsMonitor
             public TotaliBean getJSONData()
             {
                 this.listSale = new List<SalaBean>();
-                for (int i = 0; i < sale.Length; i++)
+                foreach(var i in lista)
+                {
+                    bool flag = false;
+                    for ( int y = 0; y < count ; y++)
+                    {
+                       if(sale[y] == i.salaprimotriage)
+                        {
+                            flag = true;
+                        }
+                    }
+                    if (flag==false)
+                        {
+                            count++;
+                            sale.Add(i.salaprimotriage);
+                        }
+                }
+                for (int i = 0; i < count; i++)
                 {
                     SalaBean sala = new SalaBean()
                     {
                         codice = sale[i],
                         descrizione = sale[i]
                     };
+                    if(sala.codice != string.Empty)
                     listSale.Add(sala);
                 }
                 this.listStato = new List<RigaBean>();
-                for (int i = 0; i < stati.Length; i++)
+                count = 0;
+                foreach (var i in lista)
+                {
+                    bool flag = false;
+                    for (int y = 0; y < count; y++)
+                    {
+                        if (stati[y] == i.stato)
+                        {
+                            flag = true;
+                        }
+                    }
+                if (flag == false)
+                {
+                    count++;
+                    stati.Add(i.stato);
+                }
+            }
+            for (int i = 0; i < count; i++)
                 {
                     RigaBean riga = new RigaBean();
                     riga.stato = stati[i];
+                    if(riga.stato!=string.Empty)
                     listStato.Add(riga);
                 }
                 totale = new TotaliBean();

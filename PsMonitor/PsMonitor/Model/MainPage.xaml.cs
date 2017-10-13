@@ -45,7 +45,7 @@ namespace PsMonitor
         }
         public void RefreshConnection()
         {
-             Device.StartTimer(TimeSpan.FromSeconds(20), () =>
+             Device.StartTimer(TimeSpan.FromMinutes(1), () =>
             {
                 Navigation.InsertPageBefore(new MainPage(), this);
                 Navigation.PopAsync();

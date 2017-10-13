@@ -58,7 +58,7 @@ namespace PsMonitor.Service
             {
                
                 HttpClient httpClient = new HttpClient();
-                var response = httpClient.GetAsync(URL).Result;
+                var response = httpClient.GetAsync(/*URL*/"http://192.168.8.12:3004/whmonitorps?dataingresso=2017-07-20&oraingresso=20:00").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     strResponse = await response.Content.ReadAsStringAsync();
