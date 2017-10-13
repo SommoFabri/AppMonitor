@@ -16,14 +16,15 @@ namespace PsMonitor.Model
         {
             InitializeComponent();
             RefreshConnection();
+
+
         }
-        public void RefreshConnection()
+      
+        public async void RefreshConnection()
         {
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
             {
-                var vUpdatedPage = new MainPage();
-                Navigation.InsertPageBefore(vUpdatedPage, this);
-                Navigation.PopAsync();
+                Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 return false;
             });
         }

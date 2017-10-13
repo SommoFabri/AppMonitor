@@ -9,8 +9,9 @@ namespace PsMonitor.ModelView
 {
     class GrigliaBody
     {
-        public static Grid creaGrigliaBody(TotaliBean totali, Grid gridLayout)
+        public static async Task<Grid> creaGrigliaBody(TotaliBean totali, Grid gridLayout)
         {
+
             int row = 0;
             int column = 0;
 
@@ -123,7 +124,6 @@ namespace PsMonitor.ModelView
                 column = 0;
 
             }
-
             return gridLayout;
         }
         

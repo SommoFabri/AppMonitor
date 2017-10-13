@@ -63,8 +63,7 @@ namespace PsMonitor.ModelView
                     HorizontalTextAlignment = TextAlignment.Center,
                     VerticalTextAlignment = TextAlignment.Center,
                     TextColor = Color.Black,
-                    FontAttributes = FontAttributes.Bold,
-                    FontSize= 25
+                    FontAttributes = FontAttributes.Bold
 
                 };
                 grid_image.Children.Add(image, column_image, row_image);

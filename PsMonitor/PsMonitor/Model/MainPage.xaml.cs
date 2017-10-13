@@ -7,45 +7,87 @@ using Xamarin.Forms;
 using PsMonitor.ModelView;
 using PsMonitor.Service;
 using PsMonitor.Model;
+using System.Diagnostics;
 
 namespace PsMonitor
 {
     public partial class MainPage : ContentPage
     {
-
-        public TotaliBean totali;
+       public TotaliBean totali;
+        public Stopwatch stopwatch = new Stopwatch();
+        public bool start=false;
+        public TimeSpan tempo;
+        public string deltatemporale, tempotrascorso;
         public MainPage()
         {
            
             InitializeComponent();
-            try
-            {
+            
                 Service.Connessione connessione = new Connessione();
                 totali = connessione.record.getJSONData();
-                if(totali == null)
-                {
-                    Navigation.PushAsync(new PaginaManutenzione());
-                }
                 BindingContext = new Settatotali(totali);
-                ModelView.CreaGriglia griglia = new CreaGriglia();
-                griglia.creaGrigliaHead(gridLayoutHead, totali);
+                 CreazioneGriglia();
                 RefreshConnection();
-            }
-            catch (Exception)
-            {
-                Navigation.PushModalAsync(new PaginaManutenzione());
-            }
+  
           
         }
-
+        public async void CreazioneGriglia()
+        {
+            ModelView.CreaGriglia griglia = new CreaGriglia();
+            gridLayoutHead = await griglia.creaGrigliaHead(gridLayoutHead, totali);
+        }
         public void RefreshConnection()
         {
-            Device.StartTimer(TimeSpan.FromSeconds(20), () =>
+             Device.StartTimer(TimeSpan.FromSeconds(20), () =>
             {
                 var vUpdatedPage = new MainPage();
                 Navigation.InsertPageBefore(vUpdatedPage, this);
                 Navigation.PopAsync();
-                return false;
+                return start;
+            });
+            start = true;
+           
+        }
+    
+
+        public void TempoStart()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
+            {
+                stopwatch.Start();
+                return start;
+            });
+        }
+
+        public void TempoFineDomanda()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
+            {
+                stopwatch.Stop();
+                tempo = stopwatch.Elapsed;
+                return start;
+            });
+        }
+
+        public void TempoResetDomanda()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
+            {
+                stopwatch.Reset();
+                return start;
+            });
+        }
+
+        public void TempoRestartDomanda()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
+            {   
+                tempo = stopwatch.Elapsed;
+                deltatemporale = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", tempo.Hours, tempo.Minutes, tempo.Seconds, tempo.Milliseconds);
+                tempotrascorso = deltatemporale;
+           
+                stopwatch.Restart();
+                return start;
             });
         }
     }

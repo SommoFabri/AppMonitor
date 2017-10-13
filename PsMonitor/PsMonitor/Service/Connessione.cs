@@ -26,7 +26,7 @@ namespace PsMonitor.Service
 
             string URL = DateNow();
             response = await REST(URL);
-            System.Diagnostics.Debug.WriteLine(response);
+            //System.Diagnostics.Debug.WriteLine(response);
              if(response=="errore")
                 {
                 }
