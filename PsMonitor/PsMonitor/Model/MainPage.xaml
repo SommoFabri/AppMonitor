@@ -4,15 +4,12 @@
              xmlns:local="clr-namespace:PsMonitor"
              x:Class="PsMonitor.MainPage"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             NavigationPage.HasNavigationBar="False"
-             >
-
+             NavigationPage.HasNavigationBar="False" >
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <StackLayout Orientation="Horizontal">
-            <Image Source="logostruttura.jpg"/>
+            <Image Source="logostruttura.jpg" HeightRequest="50"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Margin="0,20,40,0">
-                <Label Text="{Binding DateTime,
-                        StringFormat='{0:MMMM d, yyyy HH:mm:ss }'}"
+                <Label Text="{Binding DateTime, StringFormat='{0:MMMM d, yyyy HH:mm:ss }'}"
                         FontSize="Large">
                     <Label.BindingContext>
                         <local:ClockViewModel />

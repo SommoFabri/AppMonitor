@@ -22,11 +22,12 @@ namespace PsMonitor.Model
       
         public async void RefreshConnection()
         {
-            Device.StartTimer(TimeSpan.FromSeconds(30), () =>
-            {
-                Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-                return false;
-            });
+            
+                Device.StartTimer(TimeSpan.FromSeconds(30), () =>
+                {
+                    Navigation.PushModalAsync(new MainPage());
+                    return false;
+                });
         }
     }
 }

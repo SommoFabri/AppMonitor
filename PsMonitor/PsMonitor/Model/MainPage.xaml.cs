@@ -22,14 +22,21 @@ namespace PsMonitor
         {
            
             InitializeComponent();
-            
-                Service.Connessione connessione = new Connessione();
+            Service.Connessione connessione = new Connessione();
+            try
+            {
                 totali = connessione.record.getJSONData();
                 BindingContext = new Settatotali(totali);
-                 CreazioneGriglia();
-                RefreshConnection();
-  
-          
+                CreazioneGriglia();
+            }
+            catch (Exception)
+            {
+
+                Navigation.PushModalAsync(new PaginaManutenzione());
+            }
+               
+         
+            RefreshConnection();
         }
         public async void CreazioneGriglia()
         {
@@ -43,52 +50,10 @@ namespace PsMonitor
                 var vUpdatedPage = new MainPage();
                 Navigation.InsertPageBefore(vUpdatedPage, this);
                 Navigation.PopAsync();
-                return start;
+                return false;
             });
-            start = true;
+     
            
-        }
-    
-
-        public void TempoStart()
-        {
-            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
-            {
-                stopwatch.Start();
-                return start;
-            });
-        }
-
-        public void TempoFineDomanda()
-        {
-            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
-            {
-                stopwatch.Stop();
-                tempo = stopwatch.Elapsed;
-                return start;
-            });
-        }
-
-        public void TempoResetDomanda()
-        {
-            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
-            {
-                stopwatch.Reset();
-                return start;
-            });
-        }
-
-        public void TempoRestartDomanda()
-        {
-            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
-            {   
-                tempo = stopwatch.Elapsed;
-                deltatemporale = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", tempo.Hours, tempo.Minutes, tempo.Seconds, tempo.Milliseconds);
-                tempotrascorso = deltatemporale;
-           
-                stopwatch.Restart();
-                return start;
-            });
         }
     }
 }

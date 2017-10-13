@@ -113,7 +113,7 @@ namespace PsMonitor.ModelView
                 {
                     Orientation = StackOrientation.Horizontal
                 };
-                gridLayout.Children.Add(stack_verticalTotali, column, row);
+               gridLayout.Children.Add(stack_verticalTotali, column, row);
                 stack_verticalTotali.Children.Add(stack_DueTotali);
                 Grid grid_totali = CreazioneGrigliaCerchiTotali.griglia_cerchiTotali(i);
                 gridLayout.Children.Add(grid_totali, column, row);
