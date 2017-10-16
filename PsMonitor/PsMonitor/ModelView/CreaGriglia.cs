@@ -17,10 +17,10 @@ namespace PsMonitor.ModelView
 
         }
 
-        public async Task<Grid>  creaGrigliaHead(Grid gridLayout, TotaliBean totali)
+        public async Task<Grid>  creaGrigliaHead(Grid gridLayout, TotaliBean totali,Label[] cerchi_tot, List<Label[]> labelCerchiStato, List<Label[]> labelPersoneSala)
         {
             
-           gridLayout= await GrigliaBody.creaGrigliaBody(totali, gridLayout);
+           gridLayout= await GrigliaBody.creaGrigliaBody(totali, gridLayout, cerchi_tot, labelCerchiStato, labelPersoneSala);
             return gridLayout;
         }
 

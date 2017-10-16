@@ -9,10 +9,12 @@ namespace PsMonitor.ModelView
 {
     class CreazioneGrigliaPazientiInSala
     {
-        public static Grid GrigliaPazienti(ValoreBean i)
+        public static Grid GrigliaPazienti(ValoreBean i, List<Label[]> pasienti)
         {
             int row_image = 0;
             int column_image = 0;
+            int z = 0;
+            Label[] label = new Label[4];
             //creo griglia per cerchietti
             var grid_Reparto = new Grid
             {
@@ -60,7 +62,7 @@ namespace PsMonitor.ModelView
                     VerticalOptions = LayoutOptions.Center,
                     Source = immagine
                 };
-                var label_image = new Label
+                label[z] = new Label
                 {
                     Text = numero,
                     HorizontalTextAlignment = TextAlignment.Center,
@@ -69,10 +71,12 @@ namespace PsMonitor.ModelView
                     FontAttributes = FontAttributes.Bold
                 };
                 grid_Reparto.Children.Add(image, column_image, row_image);
-                grid_Reparto.Children.Add(label_image, column_image, row_image);
+                grid_Reparto.Children.Add(label[z], column_image, row_image);
+                z++;
                 column_image++;
             }
             column_image = 0;
+            pasienti.Add(label);
             return grid_Reparto;
         }
     }

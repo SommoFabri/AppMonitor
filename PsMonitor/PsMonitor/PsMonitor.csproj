@@ -59,6 +59,7 @@
       <DependentUpon>PaginaManutenzione.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Aggiornamento_Tab.cs" />
     <Compile Include="Service\Connessione.cs" />
     <Compile Include="Service\REST.cs" />
   </ItemGroup>

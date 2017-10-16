@@ -9,7 +9,8 @@ namespace PsMonitor.ModelView
 {
     class CreazioneGrigliaCerchiTotali
     {
-        public static Grid griglia_cerchiTotali(RigaBean i)
+        
+        public static Grid griglia_cerchiTotali(RigaBean i,Label[] cerchi_tot,int z)
         {
             int row_image = 0;
             int column_image = 0;
@@ -40,7 +41,7 @@ namespace PsMonitor.ModelView
                     Source = immagine,
                     Aspect = Aspect.AspectFill
                 };
-                var label_image = new Label
+                 cerchi_tot[z] = new Label
                 {
                     Text = numero,
                     HorizontalTextAlignment = TextAlignment.Center,
@@ -50,8 +51,9 @@ namespace PsMonitor.ModelView
                     FontSize = 25
 
                 };
+                
                 grid_image.Children.Add(image, column_image, row_image);
-                grid_image.Children.Add(label_image, column_image, row_image);
+                grid_image.Children.Add(cerchi_tot[z], column_image, row_image);
                 column_image++;
             }
             column_image = 0;

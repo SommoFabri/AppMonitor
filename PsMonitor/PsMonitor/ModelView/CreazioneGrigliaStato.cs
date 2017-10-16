@@ -10,10 +10,12 @@ namespace PsMonitor.ModelView
 {
     class CreazioneGrigliaStato
     {
-        public static Grid griglia_cerchi(RigaBean i)
+        public static Grid griglia_cerchi(RigaBean i, List<Label[]>cerchiStato)
         {
             int row_image = 0;
             int column_image = 0;
+            int z = 0;
+            Label[] label = new Label[4];
             //creo griglia per cerchietti
             var grid_image = new Grid
             {
@@ -62,7 +64,7 @@ namespace PsMonitor.ModelView
                     Aspect = Aspect.AspectFill,
                     HeightRequest=35
                 };
-                var label_image = new Label
+                label[z] = new Label
                 {
                     Text = numero,
                     HorizontalTextAlignment = TextAlignment.Center,
@@ -72,11 +74,14 @@ namespace PsMonitor.ModelView
                     FontAttributes = FontAttributes.Bold
 
                 };
+                
                 grid_image.Children.Add(image, column_image, row_image);
-                grid_image.Children.Add(label_image, column_image, row_image);
+                grid_image.Children.Add(label[z], column_image, row_image);
+                z++;
                 column_image++;
             }
             column_image = 0;
+            cerchiStato.Add(label);
             return grid_image;
         }
     }

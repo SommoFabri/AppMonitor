@@ -9,11 +9,12 @@ namespace PsMonitor.ModelView
 {
     class GrigliaBody
     {
-        public static async Task<Grid> creaGrigliaBody(TotaliBean totali, Grid gridLayout)
+        public static async Task<Grid> creaGrigliaBody(TotaliBean totali, Grid gridLayout,Label[] cerchi_tot, List<Label[]> labelCerchiStato, List<Label[]> labelPersoneSala)
         {
 
             int row = 0;
             int column = 0;
+            int cont_tot = 0;
 
             List<string> sala = new List<string>();
 
@@ -81,7 +82,7 @@ namespace PsMonitor.ModelView
                 gridLayout.Children.Add(label, column, row);
                 gridLayout.Children.Add(stack_vertical, column, row);
                 stack_vertical.Children.Add(stack_Due);
-                Grid grid_image = CreazioneGrigliaStato.griglia_cerchi(i);
+                Grid grid_image = CreazioneGrigliaStato.griglia_cerchi(i, labelCerchiStato);
                 gridLayout.Children.Add(grid_image, column, row);
                 stack_vertical.Children.Add(grid_image);
                 stack_Due.Children.Add(label);
@@ -100,7 +101,7 @@ namespace PsMonitor.ModelView
                     };
                     gridLayout.Children.Add(stack_verticalUno, column, row);
                     stack_verticalUno.Children.Add(stack_DueUno);
-                    Grid grid_Pazienti = CreazioneGrigliaPazientiInSala.GrigliaPazienti(a);
+                    Grid grid_Pazienti = CreazioneGrigliaPazientiInSala.GrigliaPazienti(a, labelPersoneSala);
                     gridLayout.Children.Add(grid_Pazienti, column, row);
                     stack_verticalUno.Children.Add(grid_Pazienti);
                 }
@@ -116,7 +117,8 @@ namespace PsMonitor.ModelView
                 };
                gridLayout.Children.Add(stack_verticalTotali, column, row);
                 stack_verticalTotali.Children.Add(stack_DueTotali);
-                Grid grid_totali = CreazioneGrigliaCerchiTotali.griglia_cerchiTotali(i);
+                Grid grid_totali = CreazioneGrigliaCerchiTotali.griglia_cerchiTotali(i,cerchi_tot, cont_tot);
+                cont_tot++;
                 gridLayout.Children.Add(grid_totali, column, row);
                 stack_verticalTotali.Children.Add(grid_totali);
              
