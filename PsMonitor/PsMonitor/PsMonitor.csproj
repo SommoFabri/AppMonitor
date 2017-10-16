@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bean\RecordBean.cs" />
+    <None Include="Bean\RecordBO.cs.old" />
     <Compile Include="Bean\RecordBO.cs" />
     <Compile Include="Bean\RigheBean.cs" />
     <Compile Include="Bean\SaleBean.cs" />
