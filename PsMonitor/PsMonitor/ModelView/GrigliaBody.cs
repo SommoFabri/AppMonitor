@@ -91,7 +91,8 @@ namespace PsMonitor.ModelView
                     var stack_verticalUno = new StackLayout
                     {
                         Orientation = StackOrientation.Vertical,
-                        BackgroundColor = Color.LightGray
+                        BackgroundColor = Color.LightGray,
+                        
                     };
                     var stack_DueUno = new StackLayout
                     {
