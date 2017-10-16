@@ -14,10 +14,6 @@ namespace PsMonitor
     public partial class MainPage : ContentPage
     {
        public TotaliBean totali;
-        public Stopwatch stopwatch = new Stopwatch();
-        public bool start=false;
-        public TimeSpan tempo;
-        public string deltatemporale, tempotrascorso;
         Service.Connessione connessione = new Connessione();
         public MainPage()
         {
