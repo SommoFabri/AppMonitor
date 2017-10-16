@@ -46,6 +46,7 @@ namespace PsMonitor.ModelView
                     Text = numero,
                     HorizontalTextAlignment = TextAlignment.Center,
                     VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalOptions=LayoutOptions.Center,
                     TextColor = Color.White,
                     FontAttributes = FontAttributes.Bold,
                     FontSize = 25

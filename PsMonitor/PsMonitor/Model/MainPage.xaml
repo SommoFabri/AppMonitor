@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Source="cerchioTot.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"/>
-                        <Label TextColor="White" FontSize="Large" Text ="{Binding Totale}" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
+                        <Label TextColor="White" FontSize="Large" Text ="{Binding Totale}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
                     </Grid>
                 </StackLayout>
             </StackLayout>

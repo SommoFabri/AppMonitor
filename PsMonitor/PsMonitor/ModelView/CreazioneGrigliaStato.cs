@@ -22,9 +22,10 @@ namespace PsMonitor.ModelView
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
-            for (int y = 0; y < 2; y++)
+            grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+            for (int y = 0; y < 4; y++)
             {
-                grid_image.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
                 grid_image.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             }
 
@@ -44,15 +45,12 @@ namespace PsMonitor.ModelView
                         break;
                     case 2:
                         immagine = "cerchioG.png";
-                        row_image = 1;
-                        column_image = 0;
                         numero = i.gialli.ToString();
                         break;
                     case 3:
                         immagine = "cerchioR.png";
                         numero = i.rossi.ToString();
-                        row_image = 1;
-                        column_image = 1;
+             
                         break;
 
                 }

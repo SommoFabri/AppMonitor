@@ -30,6 +30,7 @@ namespace PsMonitor
                 totali = connessione.record.getJSONData();
                 BindingContext = new Settatotali(totali);
                 CreazioneGriglia();
+                RefreshConnection();
             }
             catch (Exception)
             {
@@ -49,20 +50,36 @@ namespace PsMonitor
         public void RefreshConnection()
         {
             bool flag = false;
-            Device.StartTimer(TimeSpan.FromMinutes(1), () =>
-           {
-               Service.Connessione connessioni = new Connessione();
-               TotaliBean totale = connessioni.record.getJSONData();
+            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            {
+                try
+                {
+
+
+                    Service.Connessione connessioni = new Connessione();
+                    TotaliBean totale = connessioni.record.getJSONData();
+                    Aggiornamento_Tab.aggiornamento(gridLayoutHead, totale, label_image_tot, labelCerchiStato, labelPersoneSala);
+                    BindingContext = new Settatotali(totale);
+                    caricamento.IsRunning = false;
+                    caricamento.IsVisible = false;
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    caricamento.IsRunning = true;
+                    caricamento.IsVisible = true;
+                   
+                    return true;
+                }
+               
               
-               Aggiornamento_Tab.aggiornamento(gridLayoutHead, totale, label_image_tot, labelCerchiStato, labelPersoneSala);
-               BindingContext = new Settatotali(totale);
-               return true;
 
            });
         }
         public void RefreshConnectionLost()
         {
-            Device.StartTimer(TimeSpan.FromSeconds(30), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(4), () =>
             {
                 Navigation.InsertPageBefore(new MainPage(), this);
                  Navigation.PopAsync();
@@ -70,6 +87,7 @@ namespace PsMonitor
 
             });
         }
+
 
     }
 }
