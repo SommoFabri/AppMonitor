@@ -49,7 +49,7 @@ namespace PsMonitor
         public void RefreshConnection()
         {
             bool flag = false;
-            Device.StartTimer(TimeSpan.FromSeconds(20), () =>
+            Device.StartTimer(TimeSpan.FromMinutes(1), () =>
            {
                Service.Connessione connessioni = new Connessione();
                TotaliBean totale = connessioni.record.getJSONData();
@@ -62,7 +62,7 @@ namespace PsMonitor
         }
         public void RefreshConnectionLost()
         {
-            Device.StartTimer(TimeSpan.FromSeconds(20), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(30), () =>
             {
                 Navigation.InsertPageBefore(new MainPage(), this);
                  Navigation.PopAsync();
