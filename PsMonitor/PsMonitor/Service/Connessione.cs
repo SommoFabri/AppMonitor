@@ -42,7 +42,7 @@ namespace PsMonitor.Service
         {
             var data = DateTime.Today;
             var data1 = data.AddDays(-1);
-            var ora = DateTime.Now.Hour.ToString();
+            var ora = DateTime.Now.ToString("HH:mm");
             var day = data1.Day.ToString();
             var month = data1.Month.ToString();
             var anno = data1.Year.ToString();
