@@ -43,12 +43,23 @@
             </StackLayout>
             <Label Text="Totali" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Large"></Label>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                <Label TextColor="White" FontSize="Large" Text ="{Binding Totale}" FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="cerchioTot.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"/>
+                        <Label TextColor="White" FontSize="Large" Text ="{Binding Totale}" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="FillAndExpand">
             <ActivityIndicator x:Name="caricamento"></ActivityIndicator>
-            <Grid x:Name="gridLayoutHead" HorizontalOptions="FillAndExpand" ColumnSpacing="5" />
+            <Grid x:Name="gridLayoutHead" HorizontalOptions="FillAndExpand" ColumnSpacing="1" />
         </StackLayout>
         <StackLayout VerticalOptions="End"></StackLayout>
     </StackLayout>
